@@ -70,8 +70,18 @@ module Gluegun
                 if !key2["Slug"]
                   key2["Slug"] = get_slug(key2)
                 end
+                if !key2["Dic"]
+                  key2["Dic"] = ""
+                end
+
+                dic_dest_path = dest_path
+                puts "path:" + dic_dest_path
+                dic_dest_path = File.join(dest_path,"/" + key2["Dic"])
+                puts "path:" + dic_dest_path
+                FileUtils.mkdir_p(dic_dest_path) unless File.exist?(dic_dest_path)
+                puts "path:" + dic_dest_path
                 begin
-                  File.open(File.join(dest_path,"/#{key2["Slug"]}.html"), "w+") do |f|
+                  File.open(File.join(dic_dest_path,"/#{key2["Slug"]}.html"), "w+") do |f|
                     partial_erb_arr.each do |partial_erb|
                       # Set nil to "-" to activate "<%-" and "-%>" characters
                       # for non-printing lines in erb file.
