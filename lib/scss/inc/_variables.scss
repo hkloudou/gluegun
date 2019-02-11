@@ -20,7 +20,7 @@ $color-danger: #ff6b68 !default;
 // Colors
 $black: #000;
 $white: #fff;
-
+$maincolor: #e6522c;
 // Body
 $body-bg: $white !default;
 $body-color: $black !default;
@@ -42,7 +42,7 @@ $h4-font-size: $font-size-base * 1.125 !default;
 $h5-font-size: $font-size-base * 0.875 !default;
 $h6-font-size: $font-size-base * 0.75 !default;
 $headings-color: $black !default;
-$headings-alt-color: #e6522c !default;
+$headings-alt-color: $maincolor !default;
 $headings-font-weight: $font-weight-bold !default;
 
 // Sidebar
@@ -51,14 +51,14 @@ $sidebar-width: 320px !default;
 $sidebar-bg: $white !default;
 $sidebar-border-color: $sidebar-bg !default;
 $sidebar-font-size: $font-size-base - 2 !default;
-$doclink-header-color: $black !default;
+$doclink-header-color: $maincolor !default;
 $doclink-header-font-weight: $font-weight-base !default;
 $doclink-header-text-transform: uppercase !default;
 $doclink-color: #848484 !default;
 $doclink-hover-color: $black !default;
 $doclink-hover-bg: #f6f6f6 !default;
 $doclink-active-color: $headings-color !default;
-$doclink-active-before-bg: $black !default;
+$doclink-active-before-bg: $maincolor !default;
 $doclink-item-border-color: #e4e4e4 !default;
 $sidebar-close-hover-bg: rgba($white, 0.1) !default;
 $sidebar-close-fill: $white !default;
