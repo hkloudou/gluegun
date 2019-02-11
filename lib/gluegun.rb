@@ -10,6 +10,7 @@ module Gluegun
   class Gluegun
 
     def self.gluegun_generate_index(site_config_file)
+
       config_file = get_config_file(site_config_file)
       html_file = 'index.html'
       partial_erb_arr =[
@@ -99,11 +100,15 @@ module Gluegun
               end
             end
           end
-          puts "Copying assets to path."
-          copy_with_path('lib/css', dest_path)
-          copy_with_path('lib/img', dest_path)
-          copy_with_path('lib/js', dest_path)
-          copy_with_path('lib/vendors', dest_path)
+          if @site_map['PageOnly'] == true
+            puts "PageOnly"
+          else
+            puts "Copying assets to path."
+            copy_with_path('lib/css', dest_path)
+            copy_with_path('lib/img', dest_path)
+            copy_with_path('lib/js', dest_path)
+            copy_with_path('lib/vendors', dest_path)
+          end
           puts "Completed. Host the generated html files at: " + dest_path
         else
           puts "Missing document links in the site.yml file."
@@ -118,6 +123,7 @@ module Gluegun
       erb_file = '404.html'
       @site_map = YAML.load(open(config_file).read)
       dest_path = @site_map['Output']
+
       if !dest_path.nil?
         FileUtils.mkdir_p(dest_path) unless File.exist?(dest_path)
           File.open(File.join(dest_path, erb_file), "w+") do |f|
@@ -135,6 +141,7 @@ module Gluegun
     end
 
     def self.generate_sidebar(site_config_file)
+      
       config_file = get_config_file(site_config_file)
       erb_file = '_sidebar.erb'
       @site_map = YAML.load(open(config_file).read)

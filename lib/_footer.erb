@@ -16,9 +16,9 @@
             </footer>
         </section>
 
-        <script src="<%=@site_map['Output']%>/vendors/jquery/jquery-3.3.1.min.js"></script>
-        <script src="<%=@site_map['Output']%>/vendors/highlight.js/highlight.min.js"></script>
-        <script src="<%=@site_map['Output']%>/vendors/clipboard.js/clipboard.min.js"></script>
+        <script src="<%=@site_map['CDN']%>/vendors/jquery/jquery-3.3.1.min.js"></script>
+        <script src="<%=@site_map['CDN']%>/vendors/highlight.js/highlight.min.js"></script>
+        <script src="<%=@site_map['CDN']%>/vendors/clipboard.js/clipboard.min.js"></script>
 
         <%- if !@site_map['Plugins'].nil? -%>
             <%- @site_map['Plugins'].each do |categories| -%>
